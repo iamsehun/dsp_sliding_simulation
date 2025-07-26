@@ -425,7 +425,7 @@ const [selectedPoints, setSelectedPoints] = useState([
     { r: 1, theta: 0, carrierIdx: 0, waferIdx: 0, name: 'Center Point' },
     { r: 150, theta: Math.PI/4, carrierIdx: 0, waferIdx: 0, name: 'Edge Point' }
 ]);
-const [activeCategory, setActiveCategory] = useState('lower');
+const [activeCategory, setActiveCategory] = useState('basic');
 const [isAnimating, setIsAnimating] = useState(false);
 const [currentTime, setCurrentTime] = useState(0);
 const [animationSpeed, setAnimationSpeed] = useState(1.0);
