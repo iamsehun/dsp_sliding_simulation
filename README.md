@@ -1,6 +1,7 @@
 # DSP Sliding Simulation
 
-DSP (Double Side Polishing) 슬라이딩 시뮬레이터는 웨이퍼 연마 과정에서의 기어 시스템 동역학을 시뮬레이션하는 React 기반 웹 애플리케이션입니다.
+DSP (Double Side Polishing) 슬라이딩 시뮬레이터는 
+웨이퍼 연마 과정에서의 기어 시스템 동역학을 시뮬레이션하는 React 기반 웹 애플리케이션입니다.
 
 ## 🚀 주요 기능
 
