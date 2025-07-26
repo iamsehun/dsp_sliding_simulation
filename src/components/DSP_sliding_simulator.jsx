@@ -2,9 +2,6 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ScatterChart, Scatter, Cell, BarChart, Bar, ComposedChart } from 'recharts';
 
 const DEFAULT_PARAMS = {
-PRESSURE_MPa: 0.3,
-PRESTON_COEFFICIENT: 3e-8,
-HOTSPOT_MARKER_SIZE: 3,
 RING_RPM: -3.9,
 SUN_RPM: 17.1,
 UPPER_RPM: -12.5,
@@ -26,7 +23,7 @@ num_carriers: 1,
 num_wafers_per_carrier: 1,
 num_points: 15,
 TOTAL_TIME: 500,
-display_option: "lower",
+display_option: "basic",
 path: true,
 enable_anim_123: false
 };
@@ -740,6 +737,79 @@ return (
                 <option value={1}>1</option>
                 <option value={3}>3</option>
             </select>
+            </div>
+        </div>
+        </div>
+
+        {/* Gear System Parameters */}
+        <div className="mb-2 flex items-center gap-3">
+        <div className="w-20 text-sm font-semibold text-green-700">⚙️ Gears</div>
+        <div className="flex-1 grid grid-cols-6 gap-2">
+            <div>
+            <label className="block text-xs mb-1 text-gray-600">Sun Teeth</label>
+            <input
+                type="number"
+                value={params.SUN_GEAR_TEETH}
+                onChange={(e) => handleParamChange('SUN_GEAR_TEETH', e.target.value)}
+                className="w-full p-1 border rounded text-xs"
+                step="1"
+                min="1"
+            />
+            </div>
+            <div>
+            <label className="block text-xs mb-1 text-gray-600">Ring Teeth</label>
+            <input
+                type="number"
+                value={params.RING_GEAR_TEETH}
+                onChange={(e) => handleParamChange('RING_GEAR_TEETH', e.target.value)}
+                className="w-full p-1 border rounded text-xs"
+                step="1"
+                min="1"
+            />
+            </div>
+            <div>
+            <label className="block text-xs mb-1 text-gray-600">Carrier Teeth</label>
+            <input
+                type="number"
+                value={params.CARRIER_GEAR_TEETH}
+                onChange={(e) => handleParamChange('CARRIER_GEAR_TEETH', e.target.value)}
+                className="w-full p-1 border rounded text-xs"
+                step="1"
+                min="1"
+            />
+            </div>
+            <div>
+            <label className="block text-xs mb-1 text-gray-600">Sun Radius(mm)</label>
+            <input
+                type="number"
+                value={params.SUN_GEAR_RADIUS}
+                onChange={(e) => handleParamChange('SUN_GEAR_RADIUS', e.target.value)}
+                className="w-full p-1 border rounded text-xs"
+                step="0.1"
+                min="1"
+            />
+            </div>
+            <div>
+            <label className="block text-xs mb-1 text-gray-600">Ring Radius(mm)</label>
+            <input
+                type="number"
+                value={params.RING_GEAR_RADIUS}
+                onChange={(e) => handleParamChange('RING_GEAR_RADIUS', e.target.value)}
+                className="w-full p-1 border rounded text-xs"
+                step="0.1"
+                min="1"
+            />
+            </div>
+            <div>
+            <label className="block text-xs mb-1 text-gray-600">Carrier Radius(mm)</label>
+            <input
+                type="number"
+                value={params.CARRIER_GEAR_RADIUS}
+                onChange={(e) => handleParamChange('CARRIER_GEAR_RADIUS', e.target.value)}
+                className="w-full p-1 border rounded text-xs"
+                step="0.1"
+                min="1"
+            />
             </div>
         </div>
         </div>
